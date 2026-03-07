@@ -1,0 +1,670 @@
+/* ==============================================
+   GlamSched — Color Palette
+   #001514  Ink Black
+   #FBFFFE  White
+   #6B0504  Dark Garnet
+   #A3320B  Rust Brown
+   #E6AF2E  Sunflower Gold
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ink-black:  #001514;
+  --white:      #FBFFFE;
+  --garnet:     #6B0504;
+  --rust:       #A3320B;
+  --gold:       #E6AF2E;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(135deg, var(--ink-black) 0%, #0d2b2a 50%, #1a3a38 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Page wrapper ── */
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── Auth card ── */
+.auth-card {
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  width: 150%;
+  max-width: 1500px;
+  overflow: hidden;
+  animation: fadeUp 0.5s ease;
+  display: flex;
+  flex-direction: row;
+  min-height: 480px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Card header banner ── */
+.auth-header {
+  background: linear-gradient(160deg, var(--garnet) 0%, var(--rust) 100%);
+  padding: 48px 36px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 160px;
+  border-radius: 0;
+}
+
+.auth-header .brand-logo {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.auth-header h1 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.auth-header .subtitle {
+  color: rgba(251, 255, 254, 0.8);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1.6;
+  max-width: 200px;
+}
+
+/* ── Card body ── */
+.auth-body {
+  padding: 40px 28px;
+  background: var(--white);
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-body h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--ink-black);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ── Input groups ── */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-group .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 13px 14px 13px 40px;
+  border: 1.5px solid #c8b8a0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  color: var(--ink-black);
+  background: #faf8f4;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.input-group input::placeholder {
+  color: #a09080;
+}
+
+.input-group input:focus {
+  border-color: var(--rust);
+  box-shadow: 0 0 0 3px rgba(163, 50, 11, 0.12);
+  background: var(--white);
+}
+
+/* ── Password toggle button ── */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a09080;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover {
+  color: var(--rust);
+}
+
+.input-group input[type="password"],
+.input-group input[type="text"] {
+  padding-right: 42px;
+}
+
+/* ── Primary button ── */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--garnet), var(--rust));
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  background: #c4b090;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Secondary / back button ── */
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: var(--rust);
+  border: 1.5px solid #d4a87a;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #fdf3e3;
+  color: var(--garnet);
+}
+
+/* ── Footer link row ── */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: #6e5040;
+}
+
+.auth-footer a {
+  color: var(--rust);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  color: var(--garnet);
+  text-decoration: underline;
+}
+
+/* ── Error message ── */
+.error-msg {
+  background: #fbe8e4;
+  color: var(--garnet);
+  border: 1px solid #e8b0a0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.87rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* ── Role selection cards ── */
+.role-cards {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+  flex-direction: column;
+}
+
+.role-card {
+  flex: 1;
+  padding: 22px 14px;
+  border: 2px solid #d4b896;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  background: #faf8f4;
+}
+
+.role-card:hover {
+  border-color: var(--rust);
+  box-shadow: 0 6px 20px rgba(163, 50, 11, 0.18);
+  transform: translateY(-2px);
+}
+
+.role-card .role-icon {
+  font-size: 34px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.role-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--ink-black);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.role-card p {
+  color: #6e5040;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* ── Badge for selected role ── */
+.role-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #f0c040);
+  color: var(--ink-black);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Dashboard full-screen layout ── */
+.dashboard-layout {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Sidebar ── */
+.db-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--ink-black) 0%, #0a2020 100%);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(230, 175, 46, 0.2);
+  overflow-y: auto;
+}
+
+.db-sidebar-brand {
+  padding: 28px 24px 24px;
+  border-bottom: 1px solid rgba(230, 175, 46, 0.15);
+}
+
+.db-brand-name {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.db-sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.db-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(251, 255, 254, 0.65);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.18s, color 0.18s;
+}
+
+.db-nav-item:hover {
+  background: rgba(230, 175, 46, 0.1);
+  color: var(--white);
+}
+
+.db-nav-item.active {
+  background: linear-gradient(135deg, var(--garnet), var(--rust));
+  color: var(--white);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(107, 5, 4, 0.4);
+}
+
+.db-nav-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.db-sidebar-footer {
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(230, 175, 46, 0.15);
+}
+
+.db-signout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 14px;
+  background: transparent;
+  border: 1.5px solid rgba(230, 175, 46, 0.35);
+  border-radius: 10px;
+  color: rgba(251, 255, 254, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.db-signout-btn:hover {
+  background: rgba(230, 175, 46, 0.1);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+/* ── Main content ── */
+.db-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f4efe6;
+  overflow: hidden;
+}
+
+.db-topbar {
+  background: var(--white);
+  padding: 18px 32px;
+  border-bottom: 1px solid #e0d8cc;
+  box-shadow: 0 1px 6px rgba(0, 21, 20, 0.06);
+  flex-shrink: 0;
+}
+
+.db-page-title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink-black);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.db-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 36px;
+}
+
+/* ── Welcome banner ── */
+.db-welcome-banner {
+  background: linear-gradient(135deg, var(--garnet) 0%, var(--rust) 100%);
+  border-radius: 18px;
+  padding: 36px 40px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 30px rgba(107, 5, 4, 0.3);
+  border-left: 5px solid var(--gold);
+}
+
+.db-welcome-text h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.db-welcome-text p {
+  font-size: 0.92rem;
+  color: rgba(251, 255, 254, 0.88);
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Stats grid ── */
+.db-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.db-stat-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(0, 21, 20, 0.07);
+  border-top: 3px solid var(--gold);
+}
+
+.db-stat-icon {
+  font-size: 32px;
+}
+
+.db-stat-number {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  line-height: 1;
+}
+
+.db-stat-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: #6e5040;
+  margin-top: 4px;
+}
+
+/* ── Quick actions ── */
+.db-section-heading {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink-black);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.db-action-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.db-action-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 26px 22px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 21, 20, 0.07);
+  border: 1.5px solid #e8ddd0;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+
+.db-action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(107, 5, 4, 0.13);
+  border-color: var(--gold);
+}
+
+.db-action-card svg {
+  color: var(--rust);
+  margin-bottom: 12px;
+}
+
+.db-action-card h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink-black);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.db-action-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: #6e5040;
+}
+
+/* ── Section pages (Appointments, Services, etc.) ── */
+.page-section {
+  max-width: 700px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ink-black);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  font-family: 'Poppins', sans-serif;
+  color: #6e5040;
+  font-size: 0.88rem;
+  margin-bottom: 28px;
+}
+
+.empty-state {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 60px 40px;
+  text-align: center;
+  color: #b0a090;
+  box-shadow: 0 2px 12px rgba(0, 21, 20, 0.07);
+  border: 1.5px dashed #d8cfc4;
+}
+
+.empty-state p {
+  margin-top: 14px;
+  font-size: 0.92rem;
+}
+
+/* ── Toast notification ── */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a3a2a;
+  color: #d4f0de;
+  border: 1.5px solid #3cb371;
+  border-left: 5px solid #3cb371;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-family: 'Poppins', 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  animation: toastIn 0.35s ease, toastOut 0.35s ease 1.8s forwards;
+  min-width: 260px;
+  max-width: 360px;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  color: #3cb371;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(16px); }
+}
+
+/* ── Responsive: hide branding panel on narrow viewports ── */
+@media (max-width: 680px) {
+  .auth-card {
+    flex-direction: column;
+    max-width: 420px;
+  }
+  .auth-header {
+    flex: 0 0 auto;
+    padding: 28px 24px;
+  }
+  .auth-header h1 {
+    font-size: 1.6rem;
+  }
+  .auth-body {
+    padding: 28px 24px;
+  }
+}

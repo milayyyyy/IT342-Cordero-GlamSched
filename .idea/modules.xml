@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IT342-Cordero-GlamSched.iml" filepath="$PROJECT_DIR$/.idea/IT342-Cordero-GlamSched.iml" />
+      <module fileurl="file://$PROJECT_DIR$/glamsched/glamsched.iml" filepath="$PROJECT_DIR$/glamsched/glamsched.iml" />
+    </modules>
+  </component>
+</project>
