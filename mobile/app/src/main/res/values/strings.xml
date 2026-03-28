@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GlamSched</string>
+    <string name="tagline">Book your beauty appointments with ease</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="create_account">Create Account</string>
+
+    <!-- Hints -->
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+
+    <!-- Roles -->
+    <string name="i_am_a">I am a</string>
+    <string name="role_client">Client</string>
+    <string name="role_artist">Artist</string>
+
+    <!-- Buttons -->
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logout">Logout</string>
+
+    <!-- Navigation text -->
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="already_have_account">Already have an account?</string>
+
+    <!-- Validation errors -->
+    <string name="error_name_required">Full name is required</string>
+    <string name="error_invalid_email">Enter a valid email address</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="error_password_min">Password must be at least 8 characters</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+
+    <!-- Toast messages -->
+    <string name="registration_success">Account created successfully!</string>
+    <string name="registration_failed">Registration failed. Please try again.</string>
+    <string name="login_failed">Invalid email or password.</string>
+    <string name="network_error">Network error. Please check your connection.</string>
+    <string name="welcome_user">Welcome, %1$s!</string>
+</resources>

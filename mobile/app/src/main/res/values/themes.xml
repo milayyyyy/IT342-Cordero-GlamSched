@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GlamSched" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/garnet</item>
+        <item name="colorPrimaryVariant">@color/rust</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/gold</item>
+        <item name="colorOnSecondary">@color/ink_black</item>
+        <item name="android:statusBarColor">@color/ink_black</item>
+        <item name="android:navigationBarColor">@color/ink_black</item>
+        <item name="android:windowBackground">@color/card_bg</item>
+
+        <!-- Text Input styling -->
+        <item name="textInputStyle">@style/GlamSched.TextInputLayout</item>
+    </style>
+
+    <style name="GlamSched.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_stroke</item>
+        <item name="hintTextColor">@color/rust</item>
+        <item name="boxBackgroundColor">@color/input_bg</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+    </style>
+
+    <style name="GlamSched.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="backgroundTint">@color/btn_primary_tint</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="GlamSched.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="strokeColor">@color/btn_secondary_border</item>
+        <item name="android:textColor">@color/rust</item>
+    </style>
+</resources>

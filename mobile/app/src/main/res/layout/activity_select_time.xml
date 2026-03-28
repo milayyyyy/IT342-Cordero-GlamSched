@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:tint="@color/ink_black"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Book Appointment"
+            android:textColor="@color/ink_black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <!-- Step Indicator -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="12dp">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_step_active" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@color/garnet" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_step_active" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@color/input_border" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_step_inactive" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@color/input_border" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_step_inactive" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Step 2 of 4"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Time"
+                android:textColor="@color/ink_black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Choose your preferred time slot"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <!-- Morning Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Morning"
+                android:textColor="@color/ink_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="3"
+                android:useDefaultMargins="true">
+
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="9:00 AM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="9:30 AM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="10:00 AM" android:background="@drawable/bg_time_selected" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" />
+
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="10:30 AM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="11:00 AM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="11:30 AM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+            </GridLayout>
+
+            <!-- Afternoon Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Afternoon"
+                android:textColor="@color/ink_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="3"
+                android:useDefaultMargins="true">
+
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="1:00 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="1:30 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="2:00 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="2:30 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="3:00 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="3:30 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+            </GridLayout>
+
+            <!-- Evening Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Evening"
+                android:textColor="@color/ink_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="3"
+                android:useDefaultMargins="true">
+
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="4:00 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="4:30 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+                <TextView android:layout_width="0dp" android:layout_height="44dp" android:layout_columnWeight="1" android:gravity="center" android:text="5:00 PM" android:background="@drawable/bg_time_unselected" android:textColor="@color/ink_black" android:textSize="13sp" />
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Continue Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/garnet"
+        app:cornerRadius="12dp"
+        style="@style/Widget.MaterialComponents.Button" />
+
+</LinearLayout>

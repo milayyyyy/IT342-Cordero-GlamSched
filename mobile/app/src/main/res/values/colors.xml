@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GlamSched Web Color Palette -->
+    <color name="ink_black">#001514</color>
+    <color name="white">#FBFFFE</color>
+    <color name="garnet">#6B0504</color>
+    <color name="rust">#A3320B</color>
+    <color name="gold">#E6AF2E</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_dark">#0d2b2a</color>
+    <color name="bg_dark_deep">#1a3a38</color>
+    <color name="input_bg">#faf8f4</color>
+    <color name="card_bg">#FBFFFE</color>
+    <color name="body_bg">#f4efe6</color>
+
+    <!-- Text -->
+    <color name="text_primary">#001514</color>
+    <color name="text_secondary">#6e5040</color>
+    <color name="text_hint">#a09080</color>
+
+    <!-- Borders -->
+    <color name="input_border">#c8b8a0</color>
+    <color name="role_border">#d4b896</color>
+    <color name="btn_secondary_border">#d4a87a</color>
+
+    <!-- States -->
+    <color name="error_bg">#fbe8e4</color>
+    <color name="error_border">#e8b0a0</color>
+    <color name="error_text">#6B0504</color>
+    <color name="disabled_btn">#c4b090</color>
+    <color name="gold_badge">#f0c040</color>
+
+    <!-- Legacy aliases (keep for compatibility) -->
+    <color name="dark_navy">@color/ink_black</color>
+    <color name="gray_text">@color/text_secondary</color>
+    <color name="light_gray">@color/body_bg</color>
+    <color name="error_red">@color/garnet</color>
+</resources>
