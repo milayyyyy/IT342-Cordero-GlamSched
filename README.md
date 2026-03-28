@@ -13,13 +13,14 @@ IT342-Cordero-GlamSched/
 
 ## Tech Stack
 
-| Layer    | Technology                          |
-|----------|-------------------------------------|
-| Backend  | Spring Boot 3.5, Java 17           |
-| Database | PostgreSQL (Supabase)               |
-| Web      | React.js, React Router              |
-| Mobile   | Android (Kotlin), Material Design 3 |
-| API      | Retrofit 2.9 + OkHttp 4.12         |
+| Layer        | Technology                          |
+|--------------|-------------------------------------|
+| Architecture | REST API                            |
+| Backend      | Spring Boot 3.5, Java 17           |
+| Database     | PostgreSQL (Supabase)               |
+| Web          | React.js, React Router              |
+| Mobile       | Android (Kotlin), Material Design 3 |
+| API Client   | Retrofit 2.9 + OkHttp 4.12         |
 
 ## Features
 
