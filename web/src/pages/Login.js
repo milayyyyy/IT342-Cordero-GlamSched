@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiPost } from '../utils/api';
 import { useNavigate, Link } from 'react-router-dom';
 
 const IconEmail = () => (
@@ -58,23 +59,21 @@ function Login() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:8080/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password
-        })
-      });
-      const data = await response.json();
+      const data = await apiPost('/auth/login', { email: formData.email, password: formData.password });
       if (data.success) {
+        // Save user data to localStorage
+        if (data.data && data.data.user && data.data.user.id) {
+          localStorage.setItem('userId', data.data.user.id);
+          localStorage.setItem('userName', data.data.user.name || 'User');
+          localStorage.setItem('userRole', data.data.user.role || 'CLIENT');
+        }
         setToast(true);
         setTimeout(() => navigate('/dashboard'), 2000);
       } else {
         setError(data.error || 'Login failed');
       }
     } catch (err) {
-      setError('Connection error. Is the backend running?');
+      setError(err.message || 'Connection error. Is the backend running?');
     } finally {
       setLoading(false);
     }

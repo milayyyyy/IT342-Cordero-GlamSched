@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiPost } from '../utils/api';
 import { useNavigate, Link } from 'react-router-dom';
 
 const ToastSuccess = ({ message }) => (
@@ -76,17 +77,12 @@ function Register() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:8080/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fullName: formData.name,
-          email: formData.email,
-          password: formData.password,
-          role: role
-        })
+      const data = await apiPost('/auth/register', {
+        fullName: formData.name,
+        email: formData.email,
+        password: formData.password,
+        role: role
       });
-      const data = await response.json();
       if (data.success) {
         setToast(true);
         setTimeout(() => navigate('/login'), 2000);
@@ -94,7 +90,7 @@ function Register() {
         setError(data.error || 'Registration failed');
       }
     } catch (err) {
-      setError('Connection error. Is the backend running?');
+      setError(err.message || 'Connection error. Is the backend running?');
     } finally {
       setLoading(false);
     }

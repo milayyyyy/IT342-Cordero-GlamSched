@@ -362,6 +362,18 @@ body {
   display: block;
 }
 
+.db-role-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--ink-black);
+  background: var(--gold);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 .db-sidebar-nav {
   flex: 1;
   padding: 16px 12px;
@@ -579,7 +591,8 @@ body {
 
 /* ── Section pages (Appointments, Services, etc.) ── */
 .page-section {
-  max-width: 700px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .section-title {
@@ -651,7 +664,68 @@ body {
   to   { opacity: 0; transform: translateY(16px); }
 }
 
-/* ── Responsive: hide branding panel on narrow viewports ── */
+/* ── Global Button Styles ── */
+button {
+  font-family: 'Lato', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Modal & Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+/* Responsive: hide branding panel on narrow viewports ── */
 @media (max-width: 680px) {
   .auth-card {
     flex-direction: column;

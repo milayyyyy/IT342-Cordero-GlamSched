@@ -1,0 +1,284 @@
+.review-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5e6f0 0%, #e8d5e6 100%);
+  min-height: 100vh;
+}
+
+.review-container h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.review-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  color: #666;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.appointments-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.appointments-list h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.appointment-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.appointment-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.appointment-info {
+  flex: 1;
+}
+
+.appointment-info h4 {
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.artist-name {
+  color: #d4a574;
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+
+.appointment-date {
+  color: #999;
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.review-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #d4a574, #c89968);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.review-btn:hover {
+  background: linear-gradient(135deg, #c89968, #b8885c);
+  transform: scale(1.05);
+}
+
+/* Review Form */
+.review-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-appointment {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #d4a574;
+}
+
+.selected-appointment h3 {
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.selected-appointment p {
+  color: #666;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.rating-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  background: none;
+  border: 2px solid #e0e0e0;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.star:hover {
+  opacity: 1;
+  border-color: #d4a574;
+  background: rgba(212, 165, 116, 0.1);
+}
+
+.star.active {
+  opacity: 1;
+  border-color: #d4a574;
+  background: rgba(212, 165, 116, 0.2);
+}
+
+.rating-display {
+  color: #d4a574;
+  font-weight: 600;
+  margin: 0;
+}
+
+.review-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  border-color: #d4a574;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+.char-count {
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancel-btn,
+.submit-btn {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #d0d0d0;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #d4a574, #c89968);
+  color: white;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c89968, #b8885c);
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-error {
+  background: #f2dede;
+  color: #d9534f;
+  border: 1px solid #ebcccc;
+}
+
+.alert-success {
+  background: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+@media (max-width: 600px) {
+  .appointment-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .review-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .review-form {
+    padding: 1.5rem;
+  }
+
+  .review-container h2 {
+    font-size: 1.8rem;
+  }
+}

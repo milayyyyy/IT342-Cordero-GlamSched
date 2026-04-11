@@ -41,11 +41,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/login", "/register", "/dashboard", "/index.html", "/static/**", "/auth/**", "/*.js", "/*.css", "/favicon.ico", "/asset-manifest.json", "/manifest.json").permitAll()
-                .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                .requestMatchers("/api/artist/**").hasRole("ARTIST")
-                .requestMatchers("/api/client/**").hasRole("CLIENT")
-                .anyRequest().authenticated()
+                .requestMatchers("/**").permitAll()
             );
 
         return http.build();
