@@ -125,4 +125,36 @@ public class ServiceService {
                 photos
         );
     }
+
+    public ServiceDTO updateService(Long serviceId, ServiceDTO serviceDTO, Long artistId) {
+        edu.cit.cordero.glamsched.model.Service service = serviceRepository.findById(serviceId)
+                .orElseThrow(() -> new RuntimeException("Service not found"));
+
+        if (!service.getArtist().getId().equals(artistId)) {
+            throw new RuntimeException("You are not authorized to update this service");
+        }
+
+        service.setName(serviceDTO.getName());
+        service.setDescription(serviceDTO.getDescription());
+        service.setPrice(serviceDTO.getPrice());
+        service.setDuration(serviceDTO.getDuration());
+
+        if (serviceDTO.getPhotos() != null && !serviceDTO.getPhotos().isEmpty()) {
+            try {
+                String photosJson = objectMapper.writeValueAsString(serviceDTO.getPhotos());
+                service.setPhotos(photosJson);
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to serialize photos", e);
+            }
+        }
+
+        return mapToDTO(serviceRepository.save(service));
+    }
+
+    public void deleteService(Long serviceId) {
+        if (!serviceRepository.existsById(serviceId)) {
+            throw new RuntimeException("Service not found");
+        }
+        serviceRepository.deleteById(serviceId);
+    }
 }

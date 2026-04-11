@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/services")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ServiceController {
     @Autowired
     private ServiceService serviceService;
@@ -58,6 +59,28 @@ public class ServiceController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(new ApiResponse<>(false, null, new ApiResponse.ApiError("BAD_REQUEST", e.getMessage()), java.time.LocalDateTime.now().toString()));
+        }
+    }
+
+    @PostMapping("/update/{serviceId}")
+    public ResponseEntity<ApiResponse<ServiceDTO>> updateService(@PathVariable Long serviceId, @RequestBody ServiceDTO serviceDTO, @RequestParam Long artistId) {
+        try {
+            ServiceDTO updatedService = serviceService.updateService(serviceId, serviceDTO, artistId);
+            return ResponseEntity.ok(new ApiResponse<>(true, updatedService, null, java.time.LocalDateTime.now().toString()));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ApiResponse<>(false, null, new ApiResponse.ApiError("BAD_REQUEST", e.getMessage()), java.time.LocalDateTime.now().toString()));
+        }
+    }
+
+    @DeleteMapping("/delete/{serviceId}")
+    public ResponseEntity<ApiResponse<Void>> deleteService(@PathVariable Long serviceId) {
+        try {
+            serviceService.deleteService(serviceId);
+            return ResponseEntity.ok(new ApiResponse<>(true, null, null, java.time.LocalDateTime.now().toString()));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, null, new ApiResponse.ApiError("NOT_FOUND", e.getMessage()), java.time.LocalDateTime.now().toString()));
         }
     }
 }
