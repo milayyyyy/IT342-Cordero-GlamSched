@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.GlamSched" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Maroon as primary brand color, gold as accent -->
         <item name="colorPrimary">@color/garnet</item>
         <item name="colorPrimaryVariant">@color/rust</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/gold</item>
         <item name="colorOnSecondary">@color/ink_black</item>
-        <item name="android:statusBarColor">@color/ink_black</item>
-        <item name="android:navigationBarColor">@color/ink_black</item>
-        <item name="android:windowBackground">@color/card_bg</item>
+        <item name="android:statusBarColor">@color/bg_dark_deep</item>
+        <item name="android:navigationBarColor">@color/bg_dark_deep</item>
+        <item name="android:windowBackground">@color/body_bg</item>
 
         <!-- Text Input styling -->
         <item name="textInputStyle">@style/GlamSched.TextInputLayout</item>
     </style>
 
+    <style name="Theme.GlamSched.Splash" parent="Theme.GlamSched">
+        <item name="android:windowBackground">@drawable/bg_splash_gradient</item>
+        <item name="android:statusBarColor">@color/rust</item>
+        <item name="android:navigationBarColor">@color/rust</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <!-- Android 12+ splash screen: hide the launcher icon -->
+        <item name="android:windowSplashScreenBackground">@color/rust</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_transparent</item>
+    </style>
+
     <style name="GlamSched.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/text_input_stroke</item>
-        <item name="hintTextColor">@color/rust</item>
+        <item name="hintTextColor">@color/garnet</item>
         <item name="boxBackgroundColor">@color/input_bg</item>
         <item name="boxCornerRadiusTopStart">10dp</item>
         <item name="boxCornerRadiusTopEnd">10dp</item>
@@ -38,6 +51,12 @@
         <item name="android:textAllCaps">false</item>
         <item name="cornerRadius">10dp</item>
         <item name="strokeColor">@color/btn_secondary_border</item>
-        <item name="android:textColor">@color/rust</item>
+        <item name="android:textColor">@color/garnet</item>
+    </style>
+
+    <style name="GlamSched.TabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">false</item>
     </style>
 </resources>

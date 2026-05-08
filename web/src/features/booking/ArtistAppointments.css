@@ -1,0 +1,312 @@
+/* ───── ARTIST APPOINTMENTS ───── */
+
+.artist-appointments {
+  padding-bottom: 40px;
+}
+
+.aa-header {
+  margin-bottom: 24px;
+}
+
+/* ── Filter Bar ── */
+.aa-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.aa-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1.5px solid #e0dbd3;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.aa-filter-btn:hover {
+  border-color: #d4af37;
+  color: #b8860b;
+}
+
+.aa-filter-btn.active {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: white;
+}
+
+.aa-filter-count {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.aa-filter-btn:not(.active) .aa-filter-count {
+  background: #f0ede7;
+  color: #888;
+}
+
+/* ── Alert ── */
+.aa-alert {
+  padding: 12px 16px;
+  background: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* ── Grid ── */
+.aa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 18px;
+}
+
+/* ── Card ── */
+.aa-card {
+  background: white;
+  border: 1px solid #e8e4dd;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.aa-card:hover {
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.12);
+  transform: translateY(-2px);
+}
+
+.aa-status-pending   { border-left: 4px solid #f59e0b; }
+.aa-status-confirmed { border-left: 4px solid #48c78e; }
+.aa-status-completed { border-left: 4px solid #3b82f6; }
+.aa-status-cancelled { border-left: 4px solid #e74c3c; }
+
+/* ── Card Top ── */
+.aa-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.aa-client-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aa-client-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.aa-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aa-client-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.aa-booking-id {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+}
+
+/* ── Status Badge ── */
+.aa-status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.aa-badge-pending   { background: #fff8e1; color: #b8860b; }
+.aa-badge-confirmed { background: #edf9f0; color: #2d7a47; }
+.aa-badge-completed { background: #e8f4fd; color: #1a73e8; }
+.aa-badge-cancelled { background: #fef0f0; color: #c0392b; }
+
+/* ── Details ── */
+.aa-details {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aa-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.aa-detail-item svg {
+  color: #d4af37;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aa-detail-label {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.aa-detail-value {
+  display: block;
+  font-size: 14px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.aa-notes {
+  color: #555;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ── Actions ── */
+.aa-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #f0ede7;
+}
+
+.aa-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.aa-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aa-btn-approve {
+  background: #48c78e;
+  color: white;
+}
+
+.aa-btn-approve:hover:not(:disabled) {
+  background: #3ab77e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72, 199, 142, 0.3);
+}
+
+.aa-btn-decline {
+  background: #e74c3c;
+  color: white;
+}
+
+.aa-btn-decline:hover:not(:disabled) {
+  background: #d63c2c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.aa-btn-complete {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: white;
+  flex: 1;
+}
+
+.aa-btn-complete:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c9a227 0%, #a07708 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+}
+
+.aa-btn-cancel {
+  background: #f9f7f3;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  width: 100%;
+}
+
+.aa-btn-cancel:hover:not(:disabled) {
+  background: #e74c3c;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.aa-status-final {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: #f9f7f3;
+  border-radius: 10px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .aa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aa-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .aa-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .aa-actions {
+    flex-direction: column;
+  }
+}

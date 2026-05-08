@@ -1,20 +1,20 @@
 /* ==============================================
    GlamSched — Color Palette
-   #001514  Ink Black
-   #FBFFFE  White
-   #6B0504  Dark Garnet
-   #A3320B  Rust Brown
-   #E6AF2E  Sunflower Gold
+   #1a1a1a  Ink Black
+   #ffffff  White
+   #800020  Maroon (primary)
+   #5C0015  Dark Maroon
+   #d4af37  Gold
    ============================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --ink-black:  #001514;
-  --white:      #FBFFFE;
-  --garnet:     #6B0504;
-  --rust:       #A3320B;
-  --gold:       #E6AF2E;
+  --ink-black:  #1a1a1a;
+  --white:      #ffffff;
+  --garnet:     #800020;
+  --rust:       #5C0015;
+  --gold:       #d4af37;
 }
 
 *, *::before, *::after {
@@ -25,7 +25,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(135deg, var(--ink-black) 0%, #0d2b2a 50%, #1a3a38 100%);
+  background: linear-gradient(135deg, #050d1a 0%, #0a1628 50%, #0f1f3a 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;

@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import BookingFlow from './pages/BookingFlow';
-import PaymentPage from './pages/PaymentPage';
+import Login from './features/auth/Login';
+import Register from './features/auth/Register';
+import Dashboard from './features/dashboard/Dashboard';
+import PrivateRoute from './shared/PrivateRoute';
 
 function App() {
   return (
@@ -14,10 +13,11 @@ function App() {
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/:tab" element={<Dashboard />} />
-        <Route path="/booking" element={<BookingFlow />} />
-        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/dashboard/:tab" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/booking" element={<Navigate to="/dashboard/booknow" replace />} />
+        <Route path="/payment" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/artist/:artistId" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
   );

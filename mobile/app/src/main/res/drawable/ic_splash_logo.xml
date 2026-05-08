@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="160dp"
+    android:viewportWidth="160"
+    android:viewportHeight="160">
+
+    <!-- Outer glow ring -->
+    <path
+        android:pathData="M80,8 A72,72 0 1,1 79.999,8 Z"
+        android:fillColor="#22d4af37"
+        android:strokeWidth="0"/>
+
+    <!-- Main circle background (deep maroon) -->
+    <path
+        android:pathData="M80,16 A64,64 0 1,1 79.999,16 Z"
+        android:fillColor="#800020"/>
+
+    <!-- Inner circle accent -->
+    <path
+        android:pathData="M80,22 A58,58 0 1,1 79.999,22 Z"
+        android:fillColor="#5C0015"/>
+
+    <!-- Gold circle border -->
+    <path
+        android:pathData="M80,16 A64,64 0 1,1 79.999,16 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#d4af37"
+        android:strokeWidth="2.5"/>
+
+    <!-- Scissors - left blade -->
+    <path
+        android:pathData="M54,52 L76,80 L68,88 L46,60 C42,55 44,48 50,46 C56,44 60,47 54,52Z"
+        android:fillColor="#d4af37"/>
+
+    <!-- Scissors - right blade -->
+    <path
+        android:pathData="M106,52 L84,80 L92,88 L114,60 C118,55 116,48 110,46 C104,44 100,47 106,52Z"
+        android:fillColor="#d4af37"/>
+
+    <!-- Scissors - handle left -->
+    <path
+        android:pathData="M64,90 C60,90 56,94 56,98 C56,102 60,106 64,106 C68,106 72,102 72,98 C72,94 68,90 64,90Z"
+        android:fillColor="#d4af37"/>
+    <path
+        android:pathData="M64,94 C62,94 60,96 60,98 C60,100 62,102 64,102 C66,102 68,100 68,98 C68,96 66,94 64,94Z"
+        android:fillColor="#800020"/>
+
+    <!-- Scissors - handle right -->
+    <path
+        android:pathData="M96,90 C92,90 88,94 88,98 C88,102 92,106 96,106 C100,106 104,102 104,98 C104,94 100,90 96,90Z"
+        android:fillColor="#d4af37"/>
+    <path
+        android:pathData="M96,94 C94,94 92,96 92,98 C92,100 94,102 96,102 C98,102 100,100 100,98 C100,96 98,94 96,94Z"
+        android:fillColor="#800020"/>
+
+    <!-- Scissors center pivot -->
+    <path
+        android:pathData="M80,76 A5,5 0 1,1 79.999,76 Z"
+        android:fillColor="#ffe066"/>
+
+    <!-- Sparkle top center -->
+    <path
+        android:pathData="M80,30 L81.5,34 L86,34 L82.5,36.5 L84,41 L80,38.5 L76,41 L77.5,36.5 L74,34 L78.5,34 Z"
+        android:fillColor="#d4af37"/>
+
+    <!-- Sparkle top-left -->
+    <path
+        android:pathData="M42,42 L43,45 L46,45 L44,46.5 L45,49.5 L42,48 L39,49.5 L40,46.5 L38,45 L41,45 Z"
+        android:fillColor="#ffe066"
+        android:fillAlpha="0.8"/>
+
+    <!-- Sparkle top-right -->
+    <path
+        android:pathData="M118,42 L119,45 L122,45 L120,46.5 L121,49.5 L118,48 L115,49.5 L116,46.5 L114,45 L117,45 Z"
+        android:fillColor="#ffe066"
+        android:fillAlpha="0.8"/>
+
+    <!-- Small dot sparkles -->
+    <path
+        android:pathData="M36,72 A2.5,2.5 0 1,1 35.999,72 Z"
+        android:fillColor="#d4af37"
+        android:fillAlpha="0.7"/>
+    <path
+        android:pathData="M124,72 A2.5,2.5 0 1,1 123.999,72 Z"
+        android:fillColor="#d4af37"
+        android:fillAlpha="0.7"/>
+    <path
+        android:pathData="M46,118 A2,2 0 1,1 45.999,118 Z"
+        android:fillColor="#ffe066"
+        android:fillAlpha="0.5"/>
+    <path
+        android:pathData="M114,118 A2,2 0 1,1 113.999,118 Z"
+        android:fillColor="#ffe066"
+        android:fillAlpha="0.5"/>
+
+</vector>

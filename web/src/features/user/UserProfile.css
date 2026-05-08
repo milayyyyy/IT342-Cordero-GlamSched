@@ -1,0 +1,707 @@
+/* ───── FACEBOOK-STYLE PROFILE ───── */
+
+.fb-profile-root {
+  width: 100%;
+  background: #f0ece4;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fb-loading {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 15px;
+  color: #999;
+}
+
+.fb-loading.fb-error { color: #dc3545; }
+
+/* ── Cover Photo ── */
+.fb-cover {
+  height: 280px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fb-cover-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
+}
+
+.fb-cover-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.fb-cover-btn:hover { background: white; }
+.fb-cover-btn svg { color: #555; }
+
+/* ── Profile Header ── */
+.fb-header {
+  background: white;
+  padding: 0 32px 16px;
+  border-bottom: 1px solid #e8e4dd;
+}
+
+.fb-header-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.fb-avatar-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-top: -50px;
+  flex-shrink: 0;
+}
+
+.fb-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.fb-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 700;
+  color: white;
+  border: 5px solid white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.fb-avatar-edit {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8e4dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.fb-avatar-edit:hover { background: #d4af37; }
+.fb-avatar-edit svg { color: #555; }
+.fb-avatar-edit:hover svg { color: white; }
+
+/* Header Info */
+.fb-header-info {
+  flex: 1;
+  padding-bottom: 8px;
+  min-width: 0;
+}
+
+.fb-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 2px;
+  line-height: 1.2;
+}
+
+.fb-follower-text {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.fb-follower-count {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.fb-bio-line {
+  font-size: 13px;
+  color: #555;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+/* Action Buttons */
+.fb-header-actions {
+  display: none;
+}
+
+.fb-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.fb-action-primary {
+  background: #d4af37;
+  color: white;
+}
+
+.fb-action-primary:hover { background: #b8860b; }
+
+/* Toast */
+.fb-toast {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.fb-toast-ok {
+  background: #f0faf2;
+  color: #2d7a47;
+  border: 1px solid #b6e5c4;
+}
+
+.fb-toast-err {
+  background: #fff4f4;
+  color: #c0392b;
+  border: 1px solid #f5c0bb;
+}
+
+/* ── Tabs ── */
+.fb-tabs {
+  background: white;
+  display: flex;
+  gap: 0;
+  padding: 0 32px;
+  border-bottom: 1px solid #e8e4dd;
+}
+
+.fb-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.fb-tab:hover {
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.fb-tab.active {
+  color: #d4af37;
+  border-bottom-color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* ── Body ── */
+.fb-body {
+  padding: 12px 0 32px;
+}
+
+/* ── Two Column Layout ── */
+.fb-two-col {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 0 12px;
+  align-items: start;
+}
+
+.fb-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 16px;
+  align-self: start;
+}
+
+.fb-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Cards ── */
+.fb-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #e8e4dd;
+}
+
+.fb-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.fb-card-header .fb-card-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.fb-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0ede7;
+}
+
+/* ── Edit Button ── */
+.fb-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #d4af37;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.fb-edit-btn:hover {
+  background: #f9f7f3;
+}
+
+/* ── Edit Section ── */
+.fb-edit-section {
+  margin-top: 16px;
+}
+
+.fb-bio-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 70px;
+  color: #333;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.fb-bio-input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.fb-bio-input::placeholder {
+  color: #bbb;
+}
+
+.fb-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.fb-save-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #d4af37;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fb-save-btn:hover { background: #b8860b; }
+
+.fb-cancel-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1.5px solid #e8e4dd;
+  background: white;
+  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fb-cancel-btn:hover {
+  background: #f9f7f3;
+  border-color: #ccc;
+}
+
+/* ── Add Bio Button ── */
+.fb-add-bio-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px dashed #d4af37;
+  border-radius: 10px;
+  background: #fffdf5;
+  color: #d4af37;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 16px;
+}
+
+.fb-add-bio-btn:hover {
+  background: #fff8e1;
+}
+
+/* ── Form Inputs ── */
+.fb-form-group {
+  margin-bottom: 16px;
+}
+
+.fb-form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
+}
+
+.fb-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e8e4dd;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.fb-form-input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.fb-form-input::placeholder {
+  color: #bbb;
+}
+
+/* ── Bio ── */
+.fb-bio {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0ede7;
+}
+
+/* ── Info Items ── */
+.fb-info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.fb-info-item svg {
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* ── Stats Grid ── */
+.fb-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.fb-stat-item {
+  text-align: center;
+  padding: 14px 8px;
+  background: #f9f7f3;
+  border-radius: 10px;
+  border: 1px solid #f0ede7;
+}
+
+.fb-stat-num {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.fb-stat-label {
+  display: block;
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Status Badges ── */
+.fb-status-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fb-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fb-badge-green { background: #edf9f0; color: #2d7a47; }
+.fb-badge-blue  { background: #e8f4fd; color: #1a73e8; }
+
+/* ── Detail Grid ── */
+.fb-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fb-detail-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.fb-detail-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0ede7;
+}
+
+.fb-detail-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fb-detail-label {
+  width: 160px;
+  font-size: 13px;
+  color: #999;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.fb-detail-value {
+  font-size: 15px;
+  color: #1a1a1a;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* ── Reviews Section ── */
+.fb-reviews-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fb-review-summary {
+  text-align: center;
+  padding: 28px 24px;
+}
+
+.fb-review-avg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fb-review-avg-num {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.fb-review-avg-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 22px;
+}
+
+.fb-review-avg-count {
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.fb-star {
+  color: #ddd;
+}
+
+.fb-star.filled {
+  color: #d4af37;
+}
+
+/* Review Cards */
+.fb-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fb-review-card {
+  padding: 18px 20px;
+}
+
+.fb-review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.fb-review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.fb-review-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.fb-review-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.fb-review-date {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-top: 1px;
+}
+
+.fb-review-stars {
+  display: flex;
+  gap: 1px;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.fb-review-comment {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 52px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .fb-cover { height: 180px; }
+
+  .fb-header { padding: 0 16px 16px; }
+
+  .fb-header-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fb-avatar-wrap {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+  }
+
+  .fb-avatar-placeholder { font-size: 44px; }
+  .fb-name { font-size: 22px; }
+
+  .fb-header-info { text-align: center; }
+  .fb-header-actions { justify-content: center; }
+
+  .fb-tabs { padding: 0 16px; overflow-x: auto; }
+  .fb-body { padding: 16px; }
+
+  .fb-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .fb-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .fb-detail-label { width: auto; }
+
+  .fb-review-comment { padding-left: 0; }
+}

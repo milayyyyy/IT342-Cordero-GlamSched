@@ -1,0 +1,396 @@
+/* ───── ARTIST PUBLIC PROFILE (Facebook-style) ───── */
+
+.ap-root {
+  width: 100%;
+  background: #f0ece4;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ap-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #9b9490;
+  font-size: 16px;
+}
+
+/* ── Cover ── */
+.ap-cover {
+  height: 280px;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 40%, #c9993a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ap-cover-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
+}
+
+/* ── Feed Tab Wrapper ── */
+.ap-feed-tab {
+  width: 100%;
+}
+
+
+/* ── Header Actions (Follow button) ── */
+.ap-header-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.ap-follow-btn-inline {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.ap-follow-btn-inline:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ap-follow-btn-inline.following {
+  background: #2d7a47;
+  color: #fff;
+}
+
+.ap-follow-btn-inline.following:hover {
+  background: #1e5c34;
+}
+
+.ap-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  color: #9b9490;
+  padding: 60px 40px;
+  font-size: 14px;
+}
+
+/* ── Portfolio Tab ── */
+.ap-portfolio {
+  padding: 4px 0 32px;
+}
+
+/* ── Review Form ── */
+.ap-review-form {
+  margin-bottom: 4px;
+}
+
+.ap-star-picker {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 12px 0 14px;
+}
+
+.ap-star-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s, transform 0.1s;
+}
+
+.ap-star-btn.selected {
+  color: #d4af37;
+}
+
+.ap-star-btn:hover {
+  transform: scale(1.2);
+  color: #d4af37;
+}
+
+.ap-star-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  margin-left: 6px;
+}
+
+.ap-review-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.ap-review-msg {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2d7a47;
+}
+
+.ap-review-msg.err {
+  color: #c0392b;
+}
+
+.ap-follow-btn-inline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Feed ── */
+.ap-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 12px 0 32px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Post Card ── */
+.ap-post-card {
+  background: #fff;
+  margin: 0 12px 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #e8e4dd;
+}
+
+.ap-post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 8px;
+}
+
+.ap-post-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ap-post-avatar-img {
+  object-fit: cover;
+}
+
+.ap-following-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2d7a47;
+  background: #edf9f0;
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: 1.5px solid #b6e5c4;
+  white-space: nowrap;
+}
+
+.ap-post-meta {
+  flex: 1;
+}
+
+.ap-post-name {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.ap-post-sub {
+  display: block;
+  font-size: 12px;
+  color: #9b9490;
+  margin-top: 1px;
+}
+
+.ap-post-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b8860b;
+  background: #fff8e1;
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: 1.5px solid #f0d060;
+}
+
+.ap-post-body {
+  padding: 4px 16px 12px;
+}
+
+.ap-post-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.ap-post-desc {
+  font-size: 13px;
+  color: #6b6560;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Photo Carousel ── */
+.ap-photo-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0ede7;
+}
+
+.ap-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ap-post-card:hover .ap-photo {
+  transform: scale(1.02);
+}
+
+.ap-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ap-carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.ap-carousel-prev { left: 8px; }
+.ap-carousel-next { right: 8px; }
+
+.ap-carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.ap-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ap-carousel-dot.active {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+}
+
+/* ── Reaction Row ── */
+.ap-reaction-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 16px 0;
+  font-size: 13px;
+  color: #9b9490;
+}
+
+/* ── Post Actions ── */
+.ap-post-actions {
+  display: flex;
+  border-top: 1px solid #f0ede7;
+  margin-top: 8px;
+}
+
+.ap-action-btn {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b6560;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.ap-action-btn:hover {
+  background: #f9f7f4;
+  color: #1a1714;
+}
+
+.ap-action-btn.liked {
+  color: #e0245e;
+}
+
+.ap-action-btn + .ap-action-btn {
+  border-left: 1px solid #f0ede7;
+}
+
+.ap-book-btn {
+  color: #b8860b;
+}
+
+.ap-book-btn:hover {
+  background: #fff8e1;
+  color: #8a6100;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .ap-cover {
+    height: 180px;
+  }
+
+  .ap-feed {
+    padding: 8px 0 20px;
+  }
+
+  .ap-post-card {
+    margin: 0 8px 8px;
+  }
+}

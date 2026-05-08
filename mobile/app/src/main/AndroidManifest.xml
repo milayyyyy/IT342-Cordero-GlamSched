@@ -11,25 +11,40 @@
         android:theme="@style/Theme.GlamSched"
         android:usesCleartextTraffic="true">
 
+        <!-- Splash screen — app entry point -->
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true">
+            android:name=".features.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GlamSched.Splash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.register.RegisterActivity" />
-        <activity android:name=".ui.loginsuccess.LoginSuccessActivity" />
-        <activity android:name=".ui.dashboard.DashboardActivity" />
-        <activity android:name=".ui.dashboard.ClientDashboardActivity" />
-        <activity android:name=".ui.dashboard.ArtistDashboardActivity" />
-        <activity android:name=".ui.booking.ArtistProfileActivity" />
-        <activity android:name=".ui.booking.SelectDateActivity" />
-        <activity android:name=".ui.booking.SelectTimeActivity" />
-        <activity android:name=".ui.booking.AdditionalNotesActivity" />
-        <activity android:name=".ui.booking.BookingConfirmationActivity" />
+        <activity
+            android:name=".features.auth.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".features.auth.RegisterActivity" />
+        <activity android:name=".features.auth.LoginSuccessActivity" />
+        <activity android:name=".features.dashboard.DashboardActivity" />
+        <activity android:name=".features.dashboard.ClientDashboardActivity" />
+        <activity android:name=".features.dashboard.ArtistDashboardActivity" />
+        <activity android:name=".features.dashboard.AddServiceActivity" />
+        <activity android:name=".features.dashboard.PaymentHistoryActivity" />
+        <activity android:name=".features.dashboard.AboutGlamSchedActivity" />
+        <activity android:name=".features.dashboard.PrivacyPolicyActivity" />
+        <activity android:name=".features.dashboard.TermsOfServiceActivity" />
+        <activity android:name=".features.booking.ArtistProfileActivity" />
+        <activity android:name=".features.booking.SelectDateActivity" />
+        <activity android:name=".features.booking.SelectTimeActivity" />
+        <activity android:name=".features.booking.AdditionalNotesActivity" />
+        <activity android:name=".features.booking.BookingConfirmationActivity" />
+        <activity android:name=".features.booking.BookingActivity" />
+        <activity android:name=".features.user.UserProfileActivity" />
 
     </application>
 </manifest>
